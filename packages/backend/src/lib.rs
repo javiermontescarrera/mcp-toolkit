@@ -18,7 +18,9 @@ pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_shell::init())
         .setup(|app| {
-            let app_dir = app.path().app_data_dir().unwrap();
+            // Use custom app directory: ~/Library/Application Support/MCP Toolkit
+            let mut app_dir = dirs::data_local_dir().expect("Could not find data directory");
+            app_dir.push("MCP Toolkit");
             std::fs::create_dir_all(&app_dir).unwrap();
             let db_path = app_dir.join("mcp_manager.db");
 

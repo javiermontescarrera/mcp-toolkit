@@ -14,9 +14,9 @@ impl Storage {
     }
 
     fn get_db_path() -> PathBuf {
-        // Match Tauri's app_data_dir path: ~/Library/Application Support/com.mcp.manager/mcp_manager.db
+        // Match Tauri's app_data_dir path: ~/Library/Application Support/MCP Toolkit/mcp_manager.db
         let mut path = dirs::data_local_dir().expect("Could not find data directory");
-        path.push("com.mcp.manager");
+        path.push("MCP Toolkit");
         path.push("mcp_manager.db");
         path
     }
