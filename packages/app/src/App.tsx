@@ -1,4 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import Home from "./pages/Home";
 import ProjectDetail from "./pages/ProjectDetail";
 import McpCatalog from "./pages/McpCatalog";
@@ -8,6 +9,7 @@ import "./App.css";
 function App() {
   return (
     <div className="app">
+      <Toaster position="top-right" />
       <nav className="sidebar">
         <h1>MCP Manager</h1>
         <ul>

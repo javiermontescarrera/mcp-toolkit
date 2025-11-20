@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import { api, Project } from "../api";
 
 function Home() {
@@ -57,9 +58,9 @@ function Home() {
   const handleCopyConfig = async () => {
     try {
       const message = await api.copyMcpConfig();
-      alert(message);
+      toast.success(message);
     } catch (error) {
-      alert(`Error: ${error}`);
+      toast.error(`Error: ${error}`);
     }
   };
 
