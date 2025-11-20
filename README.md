@@ -34,24 +34,53 @@ MCP Toolkit helps you organize Model Context Protocol servers at the project lev
 
 **Installation**
 
-Download the latest release for your platform (Windows, macOS, or Linux) and install the application.
+Download the latest release for your platform:
+
+- **Windows**: Download the `.msi` installer and run it
+- **macOS**: Download the `.dmg` file, open it, and drag the app to Applications
+- **Linux**: Download the `.AppImage` file, make it executable (`chmod +x`), and run it
 
 **Configuration**
 
-Add MCP Toolkit to your AI tool's configuration. Here's an example for Claude Desktop:
+Add MCP Toolkit to your AI tool's configuration. The command path varies by platform:
 
+**macOS:**
 ```json
 {
   "mcpServers": {
     "mcp-toolkit": {
-      "command": "mcp-toolkit",
+      "command": "/Applications/MCP Toolkit.app/Contents/MacOS/mcp-stdio",
       "args": []
     }
   }
 }
 ```
 
-> **Note**: The command path may vary depending on your installation location. On macOS, this is typically `/Applications/MCP Toolkit/mcp-stdio`.
+**Windows:**
+```json
+{
+  "mcpServers": {
+    "mcp-toolkit": {
+      "command": "C:\\Users\\YourUsername\\AppData\\Local\\MCP Toolkit\\mcp-stdio.exe",
+      "args": []
+    }
+  }
+}
+```
+
+**Linux:**
+```json
+{
+  "mcpServers": {
+    "mcp-toolkit": {
+      "command": "/home/yourusername/.local/share/MCP Toolkit/mcp-stdio",
+      "args": []
+    }
+  }
+}
+```
+
+> **Tip**: The exact path depends on your installation. Use the "Copy Config" button in MCP Toolkit to get the correct path for your system.
 
 Once configured, open MCP Toolkit and start managing your servers.
 

@@ -142,6 +142,10 @@ pub async fn generate_mcp_config(
         .ok_or("Could not find local data directory")?
         .join("com.mcp.manager");
 
+    #[cfg(target_os = "windows")]
+    let mcp_stdio_path = app_dir.join("mcp-stdio.exe");
+
+    #[cfg(not(target_os = "windows"))]
     let mcp_stdio_path = app_dir.join("mcp-stdio");
 
     let config = serde_json::json!({
